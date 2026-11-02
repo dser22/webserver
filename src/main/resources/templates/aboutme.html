@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<!-- thymeleaf Template에 맞춰서 header, footer, contents영역 지정 -->
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"  
+	layout:decorate="~{/layouts/layout}">
+	<th:block layout:fragment="content">
+	<div width="100%" align="center">
+		<h2>About Me</h2>
+		<hr/>
+	</div>
+	</th:block>
+</html>

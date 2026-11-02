@@ -1,0 +1,79 @@
+@charset "UTF-8";
+body {
+	background-color: #FFFFFF;
+	font-size: 10pt;
+}
+h1 {
+    color : #485563;
+}
+a {
+    color : #485563;
+    text-decoration: none;
+}
+
+a:link {
+	color:royalblue;
+    transition : 1s; /* 속성 변경할 때 효과의 속도 조절 */
+}
+
+a:visited {
+    color : #485563;
+}
+
+a:focus {
+	background-color: royalblue;
+	text-decoration: none;
+}
+
+a:hover {
+	color:blue;
+	background-color: white;
+	text-decoration: none;
+}
+
+a:active {
+	color:blue;
+	background-color: red;
+	text-decoration: none;
+}
+
+/* 공통옵션 */
+ ul{
+    list-style-type : none;
+ }
+ ul > li {
+    float:left;
+    text-align:center;
+    }
+    
+.menu_list {width: 1500px; 
+	height: 40px;
+	line-height: 40px;
+	background: #ffedc8;}
+    
+
+/* list 목록 */
+.list_header {width: 1500px; }
+
+.list {
+	height: 40px;
+	line-height: 40px;
+	background: #f3f3f3;
+}
+
+.title {
+	height: 50px;
+	line-height: 50px;
+	background: #485563;
+	font-weight: bold;
+	color: #fff;
+}
+
+.w1500 {width: 1500px; 
+		height: 40px;}
+.w1000 {width: 1000px; }
+.w500 {width:500px; }
+.w400 {width:400px; }
+.w300 {width:300px; }
+.w200 {width:200px; }
+.w100 {width:100px;}

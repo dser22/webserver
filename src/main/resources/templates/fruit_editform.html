@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- thymeleaf Template에 맞춰서 header, footer, contents영역 지정 -->
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"  
+	layout:decorate="~{/layouts/layout}">
+	<th:block layout:fragment="content">
+	<div width="100%" align="center">
+		<H2>Fruit 정보 수정 및 삭제</H2>
+		<HR/>
+		<form method="post" th:action="@{/fruit_editok}" th:object="${fruit}">
+		<!-- PK필드값인 idx값이 꼭 있어야하는데 idx값은 출력하지 않을때 -->
+			<input type="hidden" name="idx" th:field="*{idx}"/>
+			Fruit Name: <input type="text" name="fname" th:field="*{fname}"/><br/>
+			Fruit English Name: <input type="text" name="fengname" th:field="*{fengname}"/><br/>
+			칼로리: <input type="number" name="fkcal" th:field="*{fkcal}"/><br/>
+			Fruit 설명: <textarea name="fcontents" rows="3" cols="22" th:field="*{fcontents}"></textarea><br/>
+			<input type="submit" value="Fruit 정보 수정"/>&nbsp;&nbsp;&nbsp;
+			<a th:href="@{/fruitlist}">Fruit 리스트</a>&nbsp;&nbsp;&nbsp;
+			<a th:href="@{/fruit_del/{idx}(idx=*{idx})}" onclick="return confirm('정말 삭제하시겠습니까?')">삭제</a>
+		</form>
+	</div>
+	</th:block>
+</html> 

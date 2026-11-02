@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- thymeleaf Template에 맞춰서 header, footer, contents영역 지정 -->
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"  
+	layout:decorate="~{/layouts/layout}">
+	<th:block layout:fragment="content">
+	<!-- 수강생 리스트 출력하는 콘텐츠 -->
+	<div width="100%" align="center">
+		<ul class="list_header">
+			<li class="w300 title">Fruit Name</li>
+			<li class="w300 title">Fruit English Name</li>
+			<li class="w300 title">칼로리</li>
+			<li class="w300 title">설명</li>
+			<li class="w300 title">등록일</li>
+		</ul>
+
+		<ul class="list_header" th:each="item: ${fruits}">
+			<li class="w300 list">
+				<a th:href="@{/fruit_info/{idx}(idx=${item.idx})}" th:text="${item.fname}"></a>
+			</li>
+			<li class="w300 list" th:text="${item.fengname}"></li>
+			<li class="w300 list" th:text="${item.fkcal}"></li>
+			<li class="w300 list" th:text="${item.fcontents.length() > 20 ? #strings.substring(item.fcontents, 0, 20)+ '---' : item.fcontents}"></li>
+			<li class="w300 list" th:text="${item.regdate}"></li>
+		</ul>
+	</div>
+	<div width="100%" align="right">
+		<ul class="list_header">
+			<li class="w1500">
+				<a href="./fruit_reg">Fruit 등록</a>
+			</li>
+		</ul>
+	</div>
+	</th:block>
+</html>

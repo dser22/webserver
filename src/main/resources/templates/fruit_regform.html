@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- thymeleaf Template에 맞춰서 header, footer, contents영역 지정 -->
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"  
+	layout:decorate="~{/layouts/layout}">
+	<th:block layout:fragment="content">
+	<div width="100%" align="center">
+		<H2>Fruit 등록</H2>
+		<HR/>
+		<form method="post" th:action="@{/fruit_reg}">
+			Fruit Name: <input type="text" name="fname" placeholder="과일명"/><br/>
+			Fruit English Name: <input type="text" name="fengname" placeholder="과일 영어명"/><br/>
+			칼로리: <input type="number" name="fkcal"/>kcal<br/>
+			Fruit 설명: <textarea name="fcontents" rows="3" cols="22"></textarea><br/>
+			<input type="submit" value="Fruit 등록"/>
+		</form>
+	</div>
+	</th:block>
+</html>
